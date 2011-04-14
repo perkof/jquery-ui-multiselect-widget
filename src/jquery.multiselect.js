@@ -17,6 +17,7 @@
  *   http://www.gnu.org/licenses/gpl.html
  *
 */
+
 (function($, undefined){
 
 var multiselectID = 0;
@@ -365,6 +366,7 @@ $.widget("ech.multiselect", {
 				// setTimeout is to fix multiselect issue #14 and #47. caused by jQuery issue #3827
 				// http://bugs.jquery.com/ticket/3827 
 				setTimeout($.proxy(self.update, self), 10);
+				self._trigger('boxchecked');
 			});
 		
 		// close each widget when clicking on any other element/anywhere else on the page
